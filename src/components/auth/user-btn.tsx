@@ -12,6 +12,7 @@ import UserMenu from "./user-menu";
 import { SignOut } from "./sign-out";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function UserButton() {
   const session = await auth();
@@ -41,7 +42,13 @@ export default async function UserButton() {
           })}
         >
           {session.user.name && (
-            <Avatar size={22} name={session.user.name} variant="beam" />
+            <Image
+              src={session.user.image ?? "/avatar.png"}
+              alt={session.user.name}
+              width={28}
+              height={28}
+              className="rounded-full"
+            />
           )}
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56" align="end" forceMount>

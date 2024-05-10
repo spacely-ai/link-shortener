@@ -101,7 +101,7 @@ export function CreateLink(props: CreateLinkProps) {
 
       const result = await createLink(values);
 
-      if (result.error && result.limit) {
+      if (result.error) {
         toast.info(result.error);
         return;
       }

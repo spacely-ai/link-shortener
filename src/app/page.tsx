@@ -43,7 +43,7 @@ export default async function Home() {
             className={buttonVariants({
               variant: "expandIcon",
               size: "lg",
-              className: "group",
+              className: "group hidden",
             })}
           >
             <GithubLogo

@@ -7,21 +7,11 @@ const BetaWarning = () => {
     <Alert
       variant="info"
       icon={<SproutIcon size={20} />}
-      className="rounded-none border-y bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900/85 dark:text-white text-neutral-800"
+      className="rounded-none border-y bg-white p-4 text-neutral-800 shadow-sm dark:border-neutral-800 dark:bg-neutral-900/85 dark:text-white"
       containerClassName="container"
       iconSize={12}
     >
-      <p>
-        Welcome to the Slug beta. If you detect any problem or bug, feel
-        free to{" "}
-        <ExternalLink
-          href="https://github.com/pheralb/slug/issues/new/choose"
-          className="underline decoration-dotted underline-offset-4"
-        >
-          create an issue
-        </ExternalLink>{" "}
-        on Github.
-      </p>
+      <p>Welcome to the link shortener beta.</p>
     </Alert>
   );
 };

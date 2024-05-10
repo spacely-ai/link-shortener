@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { getLinksAndTagsByUser } from "@/server/queries";
+import { getLinksAndTags } from "@/server/queries";
 
 import CardLink from "@/components/links/card-link";
 import SearchLinks from "@/components/links/search-link";
@@ -8,7 +8,6 @@ import { CreateLink } from "@/components/links/create-link";
 import { Button } from "@/ui/button";
 import { PackageOpenIcon, PlusIcon, SparklesIcon } from "lucide-react";
 import SearchTag from "@/components/tags/search-tags";
-import LinksLimit from "@/components/links/links-limit";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -22,7 +21,7 @@ const DashboardPage = async ({
     tag?: string;
   };
 }) => {
-  const data = await getLinksAndTagsByUser();
+  const data = await getLinksAndTags();
   const searchLink = searchParams?.search;
   const searchTag = searchParams?.tag;
 
@@ -52,7 +51,6 @@ const DashboardPage = async ({
       <div className="mb-3 flex w-full items-center space-x-2 md:justify-between">
         <SearchLinks className="w-full md:w-72 md:max-w-72" />
         <div className="flex items-center space-x-2">
-          <LinksLimit userLinks={data.links.length} maxLinks={data.limit} />
           <SearchTag
             tags={data.tags}
             tagSelected={searchTag!}

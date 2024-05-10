@@ -34,7 +34,7 @@ const UserMenu = () => {
           <span>Settings</span>
         </Link>
       </DropdownMenuItem>
-      <DropdownMenuItem
+      {/* <DropdownMenuItem
         asChild
         className="flex w-full items-center justify-between"
       >
@@ -60,7 +60,7 @@ const UserMenu = () => {
           </div>
           <ArrowUpRight size={iconSize} className="opacity-40" />
         </Link>
-      </DropdownMenuItem>
+      </DropdownMenuItem> */}
     </>
   );
 };

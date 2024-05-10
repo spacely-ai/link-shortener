@@ -32,14 +32,14 @@ const Header = () => {
             >
               <Logo width={30} />
               <span className="self-center whitespace-nowrap text-lg font-medium tracking-tight dark:text-white">
-                slug
+                Link Shortener
               </span>
               <Badge className="hidden cursor-pointer md:block">beta</Badge>
             </Link>
           </div>
         </div>
         <div className="flex items-center space-x-1">
-          <ExternalLink
+          {/* <ExternalLink
             href="https://github.com/pheralb/slug"
             className={buttonVariants({
               variant: "ghost",
@@ -47,7 +47,7 @@ const Header = () => {
             })}
           >
             <GithubLogo width={20} name="GitHub Repository" />
-          </ExternalLink>
+          </ExternalLink> */}
           <CommandK />
           <ModeToggle />
           <UserButton />

@@ -57,7 +57,6 @@ export const checkIfSlugExist = async (slug: string) => {
  */
 
 interface createLinkResult {
-  limit?: boolean;
   error?: string;
   linkId?: string;
 }
@@ -72,22 +71,6 @@ export const createLink = async (
     return { error: "Not authenticated. Please login again." };
   }
 
-  // Get number of links created by the user:
-  const count = await db.links.count({
-    where: {
-      creatorId: currentUser.user?.id,
-    },
-  });
-
-  // Check if the user has reached the limit:
-  const limit = currentUser.user?.limitLinks;
-  if (count >= limit) {
-    return {
-      limit: true,
-      error: `You have reached the limit of ${limit} links.`,
-    };
-  }
-
   // Create new link:
   const result = await db.links.create({
     data: {
@@ -99,7 +82,7 @@ export const createLink = async (
   revalidatePath("/");
   revalidatePath("/dashboard");
 
-  return { limit: false, linkId: result.id };
+  return { linkId: result.id };
 };
 
 /**
