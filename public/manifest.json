@@ -4,9 +4,9 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "slug",
-  "description": "A beautifully open-source URL shortener",
-  "short_name": "slug",
+  "name": "Link shortener",
+  "description": "A simple link shortener",
+  "short_name": "link-shortener",
   "icons": [
     {
       "src": "/images/icon-192x192.png",
