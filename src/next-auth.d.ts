@@ -6,7 +6,6 @@ export type ExtendedUser = DefaultSession["user"] & {
   username?: string | undefined;
   isTwoFactorEnabled: boolean;
   isOAuth: boolean;
-  limitLinks: number;
 };
 
 declare module "next-auth" {
@@ -19,7 +18,6 @@ declare module "next-auth/jwt" {
   interface JWT {
     user?: {
       username: string | undefined;
-      limitLinks: number;
     } & DefaultSession["user"];
   }
 }
