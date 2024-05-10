@@ -84,7 +84,7 @@ const CommandK = () => {
               </CommandItem>
             ))}
           </CommandGroup>
-          <CommandGroup heading="Contribute">
+          {/* <CommandGroup heading="Contribute">
             {DocumentationPages.map((doc) => (
               <CommandItem
                 key={doc.href}
@@ -106,7 +106,7 @@ const CommandK = () => {
                 <span>{page.name}</span>
               </CommandItem>
             ))}
-          </CommandGroup>
+          </CommandGroup> */}
         </CommandList>
       </CommandDialog>
     </>
