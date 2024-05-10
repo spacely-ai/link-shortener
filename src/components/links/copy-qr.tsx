@@ -25,7 +25,6 @@ interface CopyQRProps {
 }
 
 const CopyQR = ({ linkInfo }: CopyQRProps) => {
-
   const handleDownloadQRImage = (type: "png" | "svg") => {
     const svg = document.getElementById("qr-code");
     const svgData = new XMLSerializer().serializeToString(svg!);
@@ -59,17 +58,17 @@ const CopyQR = ({ linkInfo }: CopyQRProps) => {
         <DialogTitle>Copy QR Code</DialogTitle>
         <DialogDescription>{linkInfo.description}</DialogDescription>
       </DialogHeader>
-      <div className="my-3 flex flex-col overflow-hidden items-center justify-center space-y-3">
+      <div className="my-3 flex flex-col items-center justify-center space-y-3 overflow-hidden">
         <div className="rounded-lg border border-neutral-100 p-2 shadow-md dark:border-neutral-800">
           <QRCode
             id="qr-code"
             size={128}
             style={{ height: "auto" }}
-            value={`https://slug.vercel.app/${linkInfo.slug}`}
+            value={`${window.location.origin}/${linkInfo.slug}`}
             viewBox={`0 0 128 128`}
           />
         </div>
-        <p className="font-mono font-medium w-full block truncate">{`/${linkInfo.slug}`}</p>
+        <p className="block w-full truncate font-mono font-medium">{`/${linkInfo.slug}`}</p>
       </div>
       <DialogFooter>
         <DropdownMenu>
